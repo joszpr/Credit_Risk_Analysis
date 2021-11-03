@@ -15,11 +15,24 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 There were different approaches in order to build a Machine Learning model. The first step was to clean and prepare the data before feeding it to different algorithms. The data contaning text or strings were converted to numerical values that the Machine Learning algorithms can process. Once the data was encoded, it was divided between the variables that will feed the algorithm and the variable to receive an output, the Loan Status that would predict whether a Loan was Low Risk or High Risk. 
 
 ![1_Original_data_balance](https://user-images.githubusercontent.com/85839235/140198063-ef94235e-0be2-4f2a-bcd7-0445e2ae951d.png)
-After cleaning the data, the values available to feed our algorithm was heavily skewed with Low Risk information, as expected. **Logistic Regression** algorithms were applied on 4 different versions of the data. The first version of Logistic Regression was done with balancing the testing data using Random Oversampling. The second Logistic Regression was done with resampling the data with SMOTE Oversampling. The third used a Random Undersampler and lastly, the fourth iteration of Logistic Regression used a Combination Sampling SMOTEEN algorithm. Two other Machine Learning models were used, Banalnced Random Forest Classifier and Easy Ensemble Ada Boost Classifier in order to compare if any model sufficiently predicts risky loans when compared to the test data. 
 
-  **Logistic Regression**
+After cleaning the data, the values available to feed our algorithm was heavily skewed with Low Risk information, as expected. **Logistic Regression** algorithms were applied on 4 different versions of the data. The first version of Logistic Regression was done with balancing the testing data using Random Oversampling. The second Logistic Regression was done with resampling the data with SMOTE Oversampling. The third used a Random Undersampler and lastly, the fourth iteration of Logistic Regression used a Combination Sampling SMOTEEN algorithm. Two other Machine Learning models were used, Banlanced Random Forest Classifier and Easy Ensemble Ada Boost Classifier in order to compare if any model sufficiently predicts risky loans when compared to the test data. 
 
-  - The first approach to resolve the balance of the data was to use Random Oversampling. This model randomly selects and adds data to the training set until the majority and minority classes are balanced.
+  #### **Logistic Regression** ####
+
+  - **Random Oversampling** - This model randomly selects and adds data to the training set until the majority and minority classes are balanced.
+  - **SMOTE Oversampling** - 
+  - **Random Undersampling** - 
+  - **Combination / SMOTEEN** - 
+
+  #### **Balanced Random Fored Classifier** ####
+
+
+  #### **Easy Ensemble / Adaptive Boost ** ####
+
+
+
+
 
 Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all six machine learning models. Use screenshots of your outputs to support your results.
 
