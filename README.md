@@ -25,6 +25,9 @@ This model randomly selects and adds data to the training set until the majority
 ![Logistic_Regression_Random_Oversampling](https://user-images.githubusercontent.com/85839235/140242175-77951a56-bc78-4ba3-800e-70f82d2c53a3.png)
 
 **Balance Accuracy Score is 0.65**
+**High Risk Precision Score is 0.01**
+**High Risk Recall Score is 0.61**
+
 The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that just creating random sets of data will not compensate enough for the disparity in balance of the data. 
 
 
@@ -33,6 +36,9 @@ This model creates synthetic data from the minority class by selecting samples f
 ![Logistic_Regression_SMOTE_Oversampling](https://user-images.githubusercontent.com/85839235/140242645-735e3d1f-47ae-4b41-bb5d-acc12609813e.png)
 
 **Balance Accuracy Score is 0.63**
+**High Risk Precision Score is 0.01**
+**High Risk Recall Score is 0.59**
+
 The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that the creation of synthetic data of the minority class will not compensate enough for the disparity in balance of the data. 
 
 
@@ -41,6 +47,9 @@ This model resamples the data in order to decrease the size of hte majority clas
 ![Logistic_Regression_Undersampling](https://user-images.githubusercontent.com/85839235/140242907-e425a87d-6923-4702-92c4-2fe2416bf22b.png)
 
 **Balance Accuracy Score is 0.63**
+**High Risk Precision Score is 0.01**
+**High Risk Recall Score is 0.61**
+
 The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that just eliminating random sets of data from the majority class will not compensate enough for the disparity in balance of the data. 
 
 
@@ -50,9 +59,10 @@ This model combines aspects of both oversampling and undersampling. It oversampl
 ![Logistic_Regression_SMOTEEN](https://user-images.githubusercontent.com/85839235/140243529-facd46b6-cfc5-44f9-8978-48f972b4696f.png)
 
 **Balance Accuracy Score is 0.64**
+**High Risk Precision Score is 0.01**
+**High Risk Recall Score is 0.70**
+
 The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that oversampling with SMOTE and undersampling with ENN will not compensate enough for the disparity in balance of the data. It is a minimal improvement over the SMOTE Linear Regression. 
-
-
 
 
 
@@ -61,6 +71,9 @@ This algorithm will sample the data and build several small, simple decision tre
 ![Balanced_Random_Forest_Classifier](https://user-images.githubusercontent.com/85839235/140243844-177c0fe9-297b-4800-8d6c-074088940c72.png)
 
 **Balance Accuracy Score is 0.78**
+**High Risk Precision Score is 0.03**
+**High Risk Recall Score is 0.68**
+
 The precision for the Low Risk is high at 1, while High Risk is at 0.03. It has a higher accuracy score than the previous models, but the predicted Precision, Recall and F1 Score are too low to be used onc redit products decision making. 
 
 One of the benefits of the Random Forest algorithm is the ability to rank the features that had more impact and importance on the output according to the algorithm. According to this model study of the data, there are about 5 categories with the most weight that impacts the risk of the credit product application, the rest is divided with less degrees of variation between the rest of the variables. 
@@ -72,6 +85,9 @@ In this algorithm a model is trained then evaluated, after evaluating the errors
 ![Easy_Ensemble_Ada_Boost](https://user-images.githubusercontent.com/85839235/140244936-419749c3-c368-4521-9fdb-4dc2e5543ad8.png)
 
 **Balance Accuracy Score is 0.93**
+**High Risk Precision Score is 0.07**
+**High Risk Recall Score is 0.91**
+
 The precision for the Low Risk is high at 1, while High Risk is at 0.07. From all the models and data resampling done on this study, this is the best model produced to be able to rpedict how Risky or Not Risk is the credit application. The Recall value (the ability of the classifier to identify all positive samples) for both High Risk and Low Risk are over 0.90. It still does has a extremely low Precision for High Risk at 0.07. This model will be very good at identifying Low Risk applications with good percentage of certainty. But it will most likely fail in identifying most High Risk applications with a Precision of 0.07 and F1 Score of 0.14.
 
 
