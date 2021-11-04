@@ -22,21 +22,26 @@ After cleaning the data, the values available to feed our algorithm was heavily 
 
   - ### **Random Oversampling** ###
 This model randomly selects and adds data to the training set until the majority and minority classes are balanced.
-![Logistic_Regression_Random_Oversampling](https://user-images.githubusercontent.com/85839235/140240013-2a0e75b6-052d-4b7b-a726-da6615adc453.png)
+![Logistic_Regression_Random_Oversampling](https://user-images.githubusercontent.com/85839235/140242175-77951a56-bc78-4ba3-800e-70f82d2c53a3.png)
 
+**Balance Accuracy Score is 0.65**
+The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that just creating random sets of data will not compensate enough for the disparity in balance of the data. 
 
 
   - ### **SMOTE Oversampling** ###
-This model randomly selects data from the majority class and removes it untilt he size of the majority class is reduced. 
-![Logistic_Regression_SMOTE_Oversampling](https://user-images.githubusercontent.com/85839235/140240033-5881f1c7-d56e-41b2-a44a-c4a020b0c708.png)
+This model creates synthetic data from the minority class by selecting samples from the minority class and interpolating nearby data.  
+![Logistic_Regression_SMOTE_Oversampling](https://user-images.githubusercontent.com/85839235/140242645-735e3d1f-47ae-4b41-bb5d-acc12609813e.png)
 
-
+**Balance Accuracy Score is 0.63**
+The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that the creation of synthetic data of the minority class will not compensate enough for the disparity in balance of the data. 
 
 
   - ### **Random Undersampling** ###
+This model resamples the data in order to decrease the size of hte majority class, resultin in loss of data. 
+![Logistic_Regression_Undersampling](https://user-images.githubusercontent.com/85839235/140242907-e425a87d-6923-4702-92c4-2fe2416bf22b.png)
 
-![Logistic_Regression_Undersampling](https://user-images.githubusercontent.com/85839235/140240052-52a946be-5b11-4954-9039-60690885c14f.png)
-
+**Balance Accuracy Score is 0.63**
+The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that just eliminating random sets of data from the majority class will not compensate enough for the disparity in balance of the data. 
 
 
 
