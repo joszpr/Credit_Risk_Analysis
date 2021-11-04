@@ -47,33 +47,39 @@ The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is r
 
   - ### **Combination / SMOTEEN** ###
 This model combines aspects of both oversampling and undersampling. It oversamples the minority data with SMOTE and undersamples the majority data with Edited Nearest Neighbors (ENN) algorithm. 
-![Logistic_Regression_SMOTEEN](https://user-images.githubusercontent.com/85839235/140240087-4ecf691d-ceb5-407c-a443-b66d7609e61c.png)
+![Logistic_Regression_SMOTEEN](https://user-images.githubusercontent.com/85839235/140243529-facd46b6-cfc5-44f9-8978-48f972b4696f.png)
+
+**Balance Accuracy Score is 0.64**
+The precision for the Low Risk is high at 1, while High Risk is at 0.01. It is reasonable to assume that oversampling with SMOTE and undersampling with ENN will not compensate enough for the disparity in balance of the data. It is a minimal improvement over the SMOTE Linear Regression. 
+
+
 
 
 
   ## **Balanced Random Forest Classifier** ##
 This algorithm will sample the data and build several small, simple decision trees. The data is sampled randomly in small portions and a decision tree is created on the small portion of data sampled. Those small trees are then combined. 
-![Balanced_Random_Forest_Classifier](https://user-images.githubusercontent.com/85839235/140240097-81a1595d-fabb-4944-bd04-87aba5a5cbad.png)
+![Balanced_Random_Forest_Classifier](https://user-images.githubusercontent.com/85839235/140243844-177c0fe9-297b-4800-8d6c-074088940c72.png)
 
+**Balance Accuracy Score is 0.78**
+The precision for the Low Risk is high at 1, while High Risk is at 0.03. It has a higher accuracy score than the previous models, but the predicted Precision, Recall and F1 Score are too low to be used onc redit products decision making. 
 
-![Balanced_Random_Forest_Classifier_Sorted_Features](https://user-images.githubusercontent.com/85839235/140240103-5848ff74-f894-4226-aca1-a60622f0c819.png)
+One of the benefits of the Random Forest algorithm is the ability to rank the features that had more impact and importance on the output according to the algorithm. According to this model study of the data, there are about 5 categories with the most weight that impacts the risk of the credit product application, the rest is divided with less degrees of variation between the rest of the variables. 
+![Balanced_Random_Forest_Classifier_Sorted_Features](https://user-images.githubusercontent.com/85839235/140244311-468158d6-5de8-400b-a143-86b6c02563ae.png)
 
 
   ## **Easy Ensemble / Adaptive Boost** ##
 In this algorithm a model is trained then evaluated, after evaluating the errors of the first model, another model is trained. Each new model is build giving more weight to he errors presented on the previous model.  
-![Easy_Ensemble_Ada_Boost](https://user-images.githubusercontent.com/85839235/140240111-a7cefa88-0cb7-45df-bac4-f21cb5a6a3b0.png)
+![Easy_Ensemble_Ada_Boost](https://user-images.githubusercontent.com/85839235/140244936-419749c3-c368-4521-9fdb-4dc2e5543ad8.png)
+
+**Balance Accuracy Score is 0.93**
+The precision for the Low Risk is high at 1, while High Risk is at 0.07. From all the models and data resampling done on this study, this is the best model produced to be able to rpedict how Risky or Not Risk is the credit application. The Recall value (the ability of the classifier to identify all positive samples) for both High Risk and Low Risk are over 0.90. It still does has a extremely low Precision for High Risk at 0.07. This model will be very good at identifying Low Risk applications with good percentage of certainty. But it will most likely fail in identifying most High Risk applications with a Precision of 0.07 and F1 Score of 0.14.
 
 
-
-
-
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all six machine learning models. Use screenshots of your outputs to support your results.
 
 
 # **Conclusion** #
 
+The models designed with our data failed to product algorithms that were precise enough in identifying High Risk credit applications. The inbalance of the data available between High Risk and Low Risk was too wide for models used on this analysis. Different techniques that attempts to bridge that gap by undersampling and/or oversampling failed to create a considerable change in precision for the models. 
+
+Since credit applications have great impacts for both the applicants and the financial institution, no recommendation to use any of these models can be reasonably given at this time in order to manage the operational risk of approving credit products. 
 Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
-
-### Reference Links ###
-
-[1️⃣]
